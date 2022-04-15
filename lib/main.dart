@@ -22,6 +22,7 @@ class YoutubeApp extends StatelessWidget {
             title: Text(
               'Youtube',
             ),
+            //AppBarの右側に表示するものを設定することができるプロパティ
             actions: [
               SizedBox(
                 width: 44,
@@ -35,20 +36,26 @@ class YoutubeApp extends StatelessWidget {
                 ),
               ),
             ],
+            //AppBarの左側に表示するものを設定することができるプロパティです。
             leading: Icon(Icons.videocam),
           ),
-          body: Container(
+          body:
+              //「Container」クラスは内包する子ウィジェットをカスタマイズするために利用するウィジェット
+              Container(
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
                   child: Row(
                     children: [
-                      SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: Image.network(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmVj_dg_LQ8geYXdUKaB1YOZ1dFq4qbDz3ij0PlsGD9X5SjGwvllrLjfpRKSRNDIorBQ&usqp=CAU"),
+                      Container(
+                        margin: EdgeInsets.only(right: 20),
+                        child: SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: Image.network(
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDmVj_dg_LQ8geYXdUKaB1YOZ1dFq4qbDz3ij0PlsGD9X5SjGwvllrLjfpRKSRNDIorBQ&usqp=CAU"),
+                        ),
                       ),
                       SizedBox(
                           // width: 8,
@@ -61,7 +68,9 @@ class YoutubeApp extends StatelessWidget {
                               children: [
                                 Text('登録する',
                                     style: TextStyle(color: Colors.black87)),
-                                Icon(Icons.video_call)
+                                Container(
+                                    margin: EdgeInsets.only(left: 8),
+                                    child: Icon(Icons.video_call))
                               ],
                             )),
                       ])
@@ -82,9 +91,18 @@ class YoutubeApp extends StatelessWidget {
                           );
                         },
                         contentPadding: EdgeInsets.all(8),
-                        leading: Image.network(
-                            "https://asset.watch.impress.co.jp/img/pcw/docs/1078/086/1_s.gif"),
+                        leading: Container(
+                          width: 120,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 0.5),
+                            borderRadius: BorderRadius.circular(5.0),
+                          ),
+                          child: Image.network(
+                              "https://asset.watch.impress.co.jp/img/pcw/docs/1078/086/1_s.gif"),
+                        ),
                         title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
                               "Hello Youtube!!!",
@@ -98,7 +116,15 @@ class YoutubeApp extends StatelessWidget {
                             ),
                           ],
                         ),
-                        trailing: Icon(Icons.more_vert));
+                        trailing: Container(
+                          margin: EdgeInsets.only(right: 5),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.more_vert),
+                            ],
+                          ),
+                        ));
                   },
                 ))
               ],
