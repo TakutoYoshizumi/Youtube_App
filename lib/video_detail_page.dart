@@ -46,14 +46,45 @@ class VideoDetailPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: const Text('Item 1'),
+              title: const Text(
+                'ホーム',
+                style: TextStyle(
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.grey),
+              ),
+              leading: Icon(Icons.home_outlined),
               onTap: () {
                 // Update the state of the app.
                 // ...
               },
             ),
             ListTile(
-              title: const Text('Item 2'),
+              title: const Text(
+                '検索',
+                style: TextStyle(
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.grey),
+              ),
+              leading: Icon(Icons.search),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'ショート',
+                style: TextStyle(
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                    color: Colors.grey),
+              ),
+              leading: Icon(Icons.browser_not_supported),
               onTap: () {
                 // Update the state of the app.
                 // ...
